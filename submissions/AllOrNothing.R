@@ -7,20 +7,18 @@ colnames(stats) <- c("id","Sane","Infected","Dead","InfRate","ContRate","LethRat
 out <- ""
 statme <- stats[stats$id==me,]
 while(nchar(out)<3){
-    if(statme$Sane*statme$InfRate/100 > 1){
+    if(round==1 & !nchar(out)){
+        out <- paste0(out, "B")
+    }else if(statme$Sane*statme$InfRate/100 >= 1){
         statme$InfRate <- statme$InfRate - 4
         out <- paste0(out, "M")
-    }else if(statme$Infected>10){
+    }else if(statme$Infected > 0){
         statme$Infected <- statme$Infected - 10
         out <- paste0(out, "C")
-    }else if(statme$Infected==0){
-        out <- paste0(out, "B")
     }else if(median(stats$LethRate)<20){ 
         out <- paste0(out, "W")
-    }else if(any(statme$Sane < stats$Sane)){
-        out <- paste0(out, "T")
     }else{
         out <- paste0(out, "E")     
     }
-    }
+}
 cat(substr(out,1,3))
