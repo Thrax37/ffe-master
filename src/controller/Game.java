@@ -14,7 +14,7 @@ public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
 		new BioterroristBot(),
-		//new CullBot(),
+		new CullBot(),
 		new DisseminationBot(),
 		new FamilyValues(),
 		new InfectedTown(),

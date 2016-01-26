@@ -3,13 +3,13 @@ from sys import argv
 
 args = argv[1].split(";")
 
-n = args[0]
-pid = args[1]
+n = int(args[0])
+pid = int(args[1])
 dic = ["pid","healthy","infected","dead","infection","contagion","lethality","migration"]
-players = dictionary()
-for p in range(len(args)-2):
-    players += {dic[i]:p.split("_")[i] for i in range(p.split("_"))}
-    if p.split("_")[0] == pid:
+players = []
+for p in args[2:]:
+    players += [{dic[i]:int(p.split("_")[i]) for i in range(len(p.split("_")))}]
+    if int(p.split("_")[0]) == pid:
         me = players[-1]
 
 # Bot code
