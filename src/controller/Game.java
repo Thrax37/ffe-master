@@ -9,6 +9,7 @@ import players.*;
 
 public class Game {
 	private static Player[] players = {
+		new AllOrNothing(),
 		new BioterroristBot(),
 		new DisseminationBot(),
 		new FamilyValues(),
@@ -21,6 +22,7 @@ public class Game {
 		new PassiveBot(),
 		new Researcher(),
 		new TheCure(),
+		new TheKeeper(),
 		new ThePacifist(),
 		new Triage(),
 		new TrumpBot(),
@@ -32,8 +34,8 @@ public class Game {
 	private static final int ROUNDS = 50;
 	
 	// Console
-	private static final boolean DEBUG = false;
-	private static final boolean GAME_MESSAGES = false;
+	private static final boolean DEBUG = true;
+	private static final boolean GAME_MESSAGES = true;
 	
 	private static final int START_SANE = 99;
 	private static final int START_INFECTED = 1;
