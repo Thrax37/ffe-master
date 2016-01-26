@@ -432,6 +432,9 @@ public class Game {
 				migrationInfectedRemainder--;
 				index++;
 			}
+			
+			if (index >= remainders.size()) 
+				index = 0;
 		}
 		
 		for (State state : states) {
