@@ -38,23 +38,32 @@ public class TrumpBot {
         }
         
         for (int j =0;j<3;j++){
-            if (thisState.getInfected() > 2) System.out.print("C");
-            else if (thisState.getInfectionRate() > 2) System.out.print("M");
-            else if (thisState.getMigrationRate() >9) System.out.print("B");
+            if (thisState.infected > 2) {
+              System.out.print("C");
+              thisState.infected -= 10;
+            }
+            else if (thisState.migrationRate > 2) {
+              System.out.print("B");
+              thisState.migrationRate -= 10;
+            }
+            else if (thisState.infectionRate > 2) {
+              System.out.print("M");
+              thisState.infectionRate  -= 10;
+            }
             else System.out.println("T");
         }
     }
     
     private class State {
 		 
-        private final int ownerId;
-        private final int healthy;
-        private final int infected;
-        private final int dead;
-        private final int infectionRate;
-        private final int contagionRate;
-        private final int lethalityRate;
-        private final int migrationRate;
+        public final int ownerId;
+        public final int healthy;
+        public int infected;
+        public final int dead;
+        public int infectionRate;
+        public final int contagionRate;
+        public final int lethalityRate;
+        public int migrationRate;
 
         public State(String string) {
             String[] args = string.split("_");
@@ -98,6 +107,14 @@ public class TrumpBot {
 
 		public int getMigrationRate() {
 			return migrationRate;
+		}
+		
+		public void setInfected(int infected) {
+			this.infected = infected;
+		}
+
+		public void setInfectionRate(int infectionRate) {
+			this.infectionRate = infectionRate;
 		}
 
 		public boolean isMine(){

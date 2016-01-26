@@ -2,7 +2,10 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import players.*;
@@ -11,8 +14,10 @@ public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
 		new BioterroristBot(),
+		//new CullBot(),
 		new DisseminationBot(),
 		new FamilyValues(),
+		new InfectedTown(),
 		new InfectionBot(),
 		new Madagascar(),
 		new MadScienceBot(),
@@ -27,7 +32,8 @@ public class Game {
 		new Triage(),
 		new TrumpBot(),
 		new WeaponOfMassDissemination(),
-		new XenoBot()
+		new XenoBot(),
+		new ZombieState()
 	};
 	
 	// Game Parameters
@@ -380,16 +386,58 @@ public class Game {
 			if (GAME_MESSAGES && (stateMigrationHealthy + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationHealthy + stateMigrationInfected) + " emigrated (" + stateMigrationHealthy + " healthy, " + stateMigrationInfected + " infected)");
 		}
 		
+		int migrationHealtyRemainder = migrationHealthy;
+		int migrationInfectedRemainder = migrationInfected;
+		Map<State, Double> remainders = new LinkedHashMap<State, Double>();
+		Map<State, Integer> migrantsHealthy = new HashMap<State, Integer>();
+		Map<State, Integer> migrantsInfected = new HashMap<State, Integer>();
+				
 		// Immigration
 		for (State state : states) {
 			
-			int migrationRate = state.getMigrationRate();
-			int migrationRatio = Math.floorDiv(migrationRate * 100, migrationWeight);
-			int stateMigrationHealthy = Math.floorDiv(migrationHealthy * migrationRatio, 100);
-			int stateMigrationInfected = Math.floorDiv(migrationInfected * migrationRatio, 100);
+			if (migrationWeight > 0) {
+				
+				int migrationRate = state.getMigrationRate();
+				int migrationRatio = Math.floorDiv(migrationRate * 100, migrationWeight);
+				int stateMigrationHealthy = Math.floorDiv(migrationHealthy * migrationRatio, 100);
+				double remainder = (double) (migrationHealthy * migrationRatio / 100.0) % 1.0;
+				int stateMigrationInfected = Math.floorDiv(migrationInfected * migrationRatio, 100);
+				
+				state.setHealthy(state.getHealthy() + stateMigrationHealthy);
+				state.setInfected(state.getInfected() + stateMigrationInfected);
+				
+				migrationHealtyRemainder -= stateMigrationHealthy;
+				migrationInfectedRemainder -= stateMigrationInfected;
+				remainders.put(state, remainder);
+				
+				migrantsHealthy.put(state, stateMigrationHealthy);
+				migrantsInfected.put(state, stateMigrationInfected);
+			}
+		}
+		
+		remainders = MapUtils.sortByValue(remainders);
+		int index = 0;
+		while (migrationHealtyRemainder + migrationInfectedRemainder > 0) {
 			
-			state.setHealthy(state.getHealthy() + stateMigrationHealthy);
-			state.setInfected(state.getInfected() + stateMigrationInfected);
+			State state = (State) remainders.keySet().toArray()[index];
+			
+			if (migrationHealtyRemainder > 0) {
+				state.setHealthy(state.getHealthy() + 1);
+				migrantsHealthy.put(state, migrantsHealthy.get(state) + 1);
+				migrationHealtyRemainder--;
+				index++;
+			} else if (migrationInfectedRemainder > 0) {
+				state.setInfected(state.getInfected() + migrationInfectedRemainder);
+				migrantsInfected.put(state, migrantsInfected.get(state) + 1);
+				migrationInfectedRemainder--;
+				index++;
+			}
+		}
+		
+		for (State state : states) {
+			
+			int stateMigrationHealthy = migrantsHealthy.get(state);
+			int stateMigrationInfected = migrantsInfected.get(state);
 			
 			if (GAME_MESSAGES && (stateMigrationHealthy + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationHealthy + stateMigrationInfected) + " immigrated (" + stateMigrationHealthy + " healthy, " + stateMigrationInfected + " infected)");
 		}

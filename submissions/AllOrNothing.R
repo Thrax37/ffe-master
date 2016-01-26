@@ -9,9 +9,14 @@ statme <- stats[stats$id==me,]
 while(nchar(out)<3){
     if(round==1 & !nchar(out)){
         out <- paste0(out, "B")
+    }else if(round%%5==4 & statme$Infected > 20){
+        statme$Infected <- statme$Infected - 30
+        out <- paste0(out, "Q")
     }else if(statme$Sane*statme$InfRate/100 >= 1){
-        statme$InfRate <- statme$InfRate - 4
-        out <- paste0(out, "M")
+        o <- ifelse(statme$Sane*statme$InfRate/100 < statme$Infected*statme$ContRate/100, "C", "M")
+        if(o=="C") statme$Infected <- statme$Infected - 10
+        if(o=="M") statme$InfRate <- statme$InfRate - 4
+        out <- paste0(out, o)
     }else if(statme$Infected > 0){
         statme$Infected <- statme$Infected - 10
         out <- paste0(out, "C")
