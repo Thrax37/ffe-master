@@ -43,7 +43,7 @@ public class PassiveBot {
     private class State {
 		 
         private final int ownerId;
-        private final int sane;
+        private final int healthy;
         private final int infected;
         private final int dead;
         private final int infectionRate;
@@ -54,7 +54,7 @@ public class PassiveBot {
         public State(String string) {
             String[] args = string.split("_");
             ownerId = Integer.parseInt(args[0]);
-            sane = Integer.parseInt(args[1]);
+            healthy = Integer.parseInt(args[1]);
             infected = Integer.parseInt(args[2]);
             dead = Integer.parseInt(args[3]);
             infectionRate = Integer.parseInt(args[4]);
@@ -67,8 +67,8 @@ public class PassiveBot {
 			return ownerId;
 		}
 
-		public int getSane() {
-			return sane;
+		public int getHealthy() {
+			return healthy;
 		}
 
 		public int getInfected() {

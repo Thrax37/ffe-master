@@ -5,7 +5,7 @@ public class State {
 	private final int id;
 	private Player owner;
 	
-	private Integer sane;
+	private Integer healthy;
 	private Integer infected;
 	private Integer dead;
 	private Integer infectionRate;
@@ -19,13 +19,13 @@ public class State {
 		this.owner = owner;
 	}
 	
-	public State(int id, Player owner, Integer sane, Integer infected,
+	public State(int id, Player owner, Integer healthy, Integer infected,
 			Integer dead, Integer infectionRate, Integer contagionRate,
 			Integer lethalityRate, Integer migrationRate) {
 		super();
 		this.id = id;
 		this.owner = owner;
-		this.sane = sane;
+		this.healthy = healthy;
 		this.infected = infected;
 		this.dead = dead;
 		this.infectionRate = infectionRate;
@@ -47,7 +47,7 @@ public class State {
 	}
 	
 	public boolean isAlive() {
-		return (getSane() + getInfected()) > 0 ;
+		return (getHealthy() + getInfected()) > 0 ;
 	}
 
 	public String getCommand(String args) throws Exception {
@@ -96,12 +96,12 @@ public class State {
 		return owner.getDisplayName();
 	}
 
-	public Integer getSane() {
-		return sane;
+	public Integer getHealthy() {
+		return healthy;
 	}
 
-	public void setSane(Integer sane) {
-		this.sane = sane;
+	public void setHealthy(Integer healthy) {
+		this.healthy = healthy;
 	}
 
 	public Integer getInfected() {

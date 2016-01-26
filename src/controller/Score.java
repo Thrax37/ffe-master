@@ -3,27 +3,27 @@ package controller;
 
 public class Score implements Comparable<Score> {
 	private Player player;
-	private int sane;
+	private int healthy;
 	private int infected;
 	private int dead;
 	
-	public Score(Player player, int sane, int infected, int dead) {
+	public Score(Player player, int healthy, int infected, int dead) {
 		super();
 		this.player = player;
-		this.sane = sane;
+		this.healthy = healthy;
 		this.infected = infected;
 		this.dead = dead;
 	}
 	
 	public String print() {
-		return player.getDisplayName() + " (" + sane + ", " + infected + ", " + dead + ")";
+		return player.getDisplayName() + " (" + healthy + ", " + infected + ", " + dead + ")";
 	}
 	
 	@Override
 	public int compareTo(Score other) {
-		if (sane > other.sane) {
+		if (healthy > other.healthy) {
 			return 1;
-		} else if (sane < other.sane){
+		} else if (healthy < other.healthy){
 			return -1;
 		}
 		

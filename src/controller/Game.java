@@ -5,23 +5,35 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import players.BioterroristBot;
-import players.MedicBot;
-import players.PassiveBot;
+import players.*;
 
 public class Game {
 	private static Player[] players = {
-		new PassiveBot(),
+		new BioterroristBot(),
+		new DisseminationBot(),
+		new FamilyValues(),
+		new InfectionBot(),
+		new Madagascar(),
+		new MadScienceBot(),
+		new Medic(),
 		new MedicBot(),
-		new BioterroristBot()
+		new Mooch(),
+		new PassiveBot(),
+		new Researcher(),
+		new TheCure(),
+		new ThePacifist(),
+		new Triage(),
+		new TrumpBot(),
+		new WeaponOfMassDissemination(),
+		new XenoBot()
 	};
 	
 	// Game Parameters
 	private static final int ROUNDS = 50;
 	
 	// Console
-	private static final boolean DEBUG = true;
-	private static final boolean GAME_MESSAGES = true;
+	private static final boolean DEBUG = false;
+	private static final boolean GAME_MESSAGES = false;
 	
 	private static final int START_SANE = 99;
 	private static final int START_INFECTED = 1;
@@ -90,6 +102,9 @@ public class Game {
 			if (GAME_MESSAGES) {
 				System.out.println("======== Round : " +  round + " ========");
 			}
+			
+			Collections.shuffle(states);
+			
 			if (!makeTurns()) break; //break if only no player left
 		}
 	
@@ -110,8 +125,6 @@ public class Game {
 				}
 			}
 		}
-		
-		Collections.shuffle(states);
 	}	
 	
 	private boolean makeTurns() {
@@ -239,7 +252,7 @@ public class Game {
 	
 	private void executeCure(State state) {
 		int cured = Math.max(0, Math.min(state.getInfected(), CURE_INFECTED));
-		state.setSane(state.getSane() + cured);
+		state.setHealthy(state.getHealthy() + cured);
 		state.setInfected(state.getInfected() - cured);
 		
 		if (GAME_MESSAGES) System.out.println(state.getOwner().getDisplayName() + " cured " + cured + " infected");
@@ -266,8 +279,8 @@ public class Game {
 	
 	private void executeBioterrorism(State state) {
 		for (State s : states) {
-			int infected = Math.min(s.getSane(), BIOTERRORISM_INFECTED);
-			s.setSane(s.getSane() - infected);
+			int infected = Math.min(s.getHealthy(), BIOTERRORISM_INFECTED);
+			s.setHealthy(s.getHealthy() - infected);
 			s.setInfected(s.getInfected() + infected);
 		}
 	
@@ -330,14 +343,14 @@ public class Game {
 		if (round % BIRTH_ROUND == 0) {
 			for (State state : states) {
 				
-				int saneBirths = Math.floorDiv(state.getSane(), 2);
+				int healthyBirths = Math.floorDiv(state.getHealthy(), 2);
 				int infectedBirths = Math.floorDiv(state.getInfected(), 2);
 				
-				state.setSane(state.getSane() + saneBirths);
+				state.setHealthy(state.getHealthy() + healthyBirths);
 				state.setInfected(state.getInfected() + infectedBirths);
 				
-				if (GAME_MESSAGES && (saneBirths + infectedBirths > 0)) {
-					System.out.println(state.getOwner().getDisplayName() + " : " + (saneBirths + infectedBirths) + " births (" +  saneBirths + " sane and " + infectedBirths + " infected)");
+				if (GAME_MESSAGES && (healthyBirths + infectedBirths > 0)) {
+					System.out.println(state.getOwner().getDisplayName() + " : " + (healthyBirths + infectedBirths) + " births (" +  healthyBirths + " healthy and " + infectedBirths + " infected)");
 				}
 			}
 		}
@@ -345,24 +358,24 @@ public class Game {
 	
 	private void migration() {
 		
-		int migrationSane = 0;
+		int migrationHealthy = 0;
 		int migrationInfected = 0;
 		int migrationWeight = 0;
 		
 		// Emigration
 		for (State state : states) {
 			
-			int stateMigrationSane = Math.min(state.getSane(), Math.floorDiv(state.getSane() * state.getMigrationRate(), 100));
-			int stateMigrationInfected = Math.min(state.getSane(), Math.floorDiv(state.getInfected() * state.getMigrationRate(), 100));
+			int stateMigrationHealthy = Math.min(state.getHealthy(), Math.floorDiv(state.getHealthy() * state.getMigrationRate(), 100));
+			int stateMigrationInfected = Math.min(state.getHealthy(), Math.floorDiv(state.getInfected() * state.getMigrationRate(), 100));
 			
-			state.setSane(state.getSane() - stateMigrationSane);
+			state.setHealthy(state.getHealthy() - stateMigrationHealthy);
 			state.setInfected(state.getInfected() - stateMigrationInfected);
 
-			migrationSane += stateMigrationSane;
+			migrationHealthy += stateMigrationHealthy;
 			migrationInfected += stateMigrationInfected;
 			migrationWeight += state.getMigrationRate();
 			
-			if (GAME_MESSAGES && (stateMigrationSane + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationSane + stateMigrationInfected) + " emigrated (" + stateMigrationSane + " sane, " + stateMigrationInfected + " infected)");
+			if (GAME_MESSAGES && (stateMigrationHealthy + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationHealthy + stateMigrationInfected) + " emigrated (" + stateMigrationHealthy + " healthy, " + stateMigrationInfected + " infected)");
 		}
 		
 		// Immigration
@@ -370,13 +383,13 @@ public class Game {
 			
 			int migrationRate = state.getMigrationRate();
 			int migrationRatio = Math.floorDiv(migrationRate * 100, migrationWeight);
-			int stateMigrationSane = Math.floorDiv(migrationSane * migrationRatio, 100);
+			int stateMigrationHealthy = Math.floorDiv(migrationHealthy * migrationRatio, 100);
 			int stateMigrationInfected = Math.floorDiv(migrationInfected * migrationRatio, 100);
 			
-			state.setSane(state.getSane() + stateMigrationSane);
+			state.setHealthy(state.getHealthy() + stateMigrationHealthy);
 			state.setInfected(state.getInfected() + stateMigrationInfected);
 			
-			if (GAME_MESSAGES && (stateMigrationSane + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationSane + stateMigrationInfected) + " immigrated (" + stateMigrationSane + " sane, " + stateMigrationInfected + " infected)");
+			if (GAME_MESSAGES && (stateMigrationHealthy + stateMigrationInfected > 0)) System.out.println(state.getOwner().getDisplayName() + " : " + (stateMigrationHealthy + stateMigrationInfected) + " immigrated (" + stateMigrationHealthy + " healthy, " + stateMigrationInfected + " infected)");
 		}
 	}
 	
@@ -384,9 +397,9 @@ public class Game {
 		
 		for (State state : states) {
 			
-			int infections = Math.min(state.getSane(), state.getInfectionRate());
+			int infections = Math.min(state.getHealthy(), state.getInfectionRate());
 			
-			state.setSane(state.getSane() - infections);
+			state.setHealthy(state.getHealthy() - infections);
 			state.setInfected(state.getInfected() + infections);
 			
 			if (GAME_MESSAGES && (infections > 0)) {
@@ -399,9 +412,9 @@ public class Game {
 		
 		for (State state : states) {
 			
-			int contagions = Math.min(state.getSane(), Math.floorDiv(state.getInfected() * state.getContagionRate(), 100));
+			int contagions = Math.min(state.getHealthy(), Math.floorDiv(state.getInfected() * state.getContagionRate(), 100));
 			
-			state.setSane(state.getSane() - contagions);
+			state.setHealthy(state.getHealthy() - contagions);
 			state.setInfected(state.getInfected() + contagions);
 			
 			if (GAME_MESSAGES && (contagions > 0)) {
@@ -428,11 +441,11 @@ public class Game {
 	private String generateArgs() {
 		
 		StringBuilder builder = new StringBuilder();
-		//PlayerID_Sane_Infected_Dead_IR_CR_LR_MR
+		//PlayerID_Healthy_Infected_Dead_IR_CR_LR_MR
 		for (State state : states) {
 			builder.append(';');
 			builder.append(state.getOwner().getId()).append('_');
-			builder.append(state.getSane()).append('_');
+			builder.append(state.getHealthy()).append('_');
 			builder.append(state.getInfected()).append('_');
 			builder.append(state.getDead()).append('_');
 			builder.append(state.getInfectionRate()).append('_');
@@ -450,19 +463,19 @@ public class Game {
 		System.out.println("********** FINISH **********");
 		
 		for (Player player : players) {
-			int sane = 0;
+			int healthy = 0;
 			int infected = 0;
 			int dead = 0;
 			
 			for (State state : states) {
 				if (player.equals(state.getOwner())) {
-					sane += state.getSane();
+					healthy += state.getHealthy();
 					infected += state.getInfected();
 					dead += state.getDead();
 				}
 			}
 			
-			scores.add(new Score(player, sane, infected, dead));
+			scores.add(new Score(player, healthy, infected, dead));
 		}
 		
 		//sort descending

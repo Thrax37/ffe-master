@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BioterroristBot {
+public class TrumpBot {
 
 	int round;
 	int phase;
@@ -14,7 +14,7 @@ public class BioterroristBot {
     State thisState;
 	
     public static void main(String[] args){
-        new BioterroristBot().sleep(args[0].split(";"));
+        new TrumpBot().sleep(args[0].split(";"));
     }
     
     private void sleep(String[] args) {
@@ -37,7 +37,12 @@ public class BioterroristBot {
             }
         }
         
-        System.out.println("TWD");
+        for (int j =0;j<3;j++){
+            if (thisState.getInfected() > 2) System.out.print("C");
+            else if (thisState.getInfectionRate() > 2) System.out.print("M");
+            else if (thisState.getMigrationRate() >9) System.out.print("B");
+            else System.out.println("T");
+        }
     }
     
     private class State {
