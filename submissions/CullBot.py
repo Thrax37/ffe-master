@@ -19,7 +19,7 @@ nextInfected = me["infected"]*me["contagion"]/100 + me["infection"] + me["infect
 if n%5 == 4:
     nextInfected *= 1.5
 
-if n == 0:
+if n == 1:
     actions += "BM"
     if nextInfected*1.3 > 10:
         actions += "C"
@@ -31,20 +31,66 @@ if n == 0:
         actions += "E"
     print(actions)
     exit()
+elif n == 50:
+    print("CCC")
+    exit()
+
 
 if nextInfected*1.2 > 30:
-    actions += "Q"
+    if me["infected"] >= 15:
+        actions += "Q"
+        me["infected"] -= 30
+    else:
+        actions += "C"
+        me["infected"] -= 10
 else:
     actions += "M"
+    me["infection"] -= 4
 
-if me["infection"] >= 4:
+if me["infection"] >= 3:
     actions += "M"
+    me["infection"] -= 4
+elif me["infected"] >= 7 :
+    actions += "C"
+    me["infected"] -= 10
+elif me["infection"] > 0 and me["contagion"] >= 3:
+    actions += "V"
+    me["infection"] -= 1
+    me["contagion"] -= 4
+elif me["contagion"] >= 6:
+    actions += "E"
+    me["contagion"] -= 8
+elif me["infection"] > 0:
+    actions += "M"
+    me["infection"] -= 4
+elif me["infected"] > 0:
+    actions += "C"
+    me["infected"] -= 10
 else:
     actions += "E"
+    me["contagion"] -= 8
 
-if me["infection"] >= 8:
+if me["infection"] >= 3:
     actions += "M"
+    me["infection"] -= 4
+elif me["infected"] >= 7 :
+    actions += "C"
+    me["infected"] -= 10
+elif me["infection"] > 0 and me["contagion"] >= 3:
+    actions += "V"
+    me["infection"] -= 1
+    me["contagion"] -= 4
+elif me["contagion"] >= 6:
+    actions += "E"
+    me["contagion"] -= 8
+elif me["infection"] > 0:
+    actions += "M"
+    me["infection"] -= 4
+elif me["infected"] > 0:
+    actions += "C"
+    me["infected"] -= 10
 else:
     actions += "E"
+    me["contagion"] -= 8
 
 print(actions)

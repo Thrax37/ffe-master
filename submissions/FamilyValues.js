@@ -20,12 +20,12 @@ local = {
 var response = [];
 for(var i=0;i<3;i++) {
   var model = {
-    M: local.infectionRate * (local.sane > 0 ? 1 : 0.5),
+    M: local.infectionRate,
     E: local.contagionRate * (local.sane > 0 ? 1 : 0.5),
-    I: local.lethalityRate * (local.sane > 0 ? 1 : 2),
-    V: local.infectionRate/4 + local.contagionRate/2 + local.lethalityRate/2,
-    C: local.infected / Math.max(local.infectionRate, 1),
-    B: local.migrationRate
+    I: local.lethalityRate * (round > 45 ? 0 : local.sane > 0 ? 1 : 2),
+    V: (local.infectionRate/4 + local.contagionRate/2 + local.lethalityRate/2) * (round > 45 ? 0 : 1),
+    C: local.infected / Math.max(local.infectionRate, 1) * (round > 48 ? round : local.infectionRate + local.contagionRate/100 * local.infected < (3 - i) * 10 ? 1 : 0),
+    B: local.migrationRate * 10
   };
   var max = 'M';
   for(k in model) {

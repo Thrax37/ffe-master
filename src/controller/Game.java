@@ -14,9 +14,11 @@ public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
 		new BioterroristBot(),
+		new Crossroads(),
 		new CullBot(),
 		new DisseminationBot(),
 		new FamilyValues(),
+		new InfectedHaven(),
 		new InfectedTown(),
 		new InfectionBot(),
 		new Madagascar(),
@@ -25,13 +27,19 @@ public class Game {
 		new MedicBot(),
 		new Mooch(),
 		new PassiveBot(),
+		new PassiveBot(),
 		new Researcher(),
+		new Socialist(),
+		new Strategist(),
+		new Terrorist(),
 		new TheCure(),
 		new TheKeeper(),
 		new ThePacifist(),
 		new Triage(),
 		new TrumpBot(),
+		new UndecidedBot(),
 		new WeaponOfMassDissemination(),
+		new WICKED(),
 		new XenoBot(),
 		new ZombieState()
 	};
@@ -40,8 +48,9 @@ public class Game {
 	private static final int ROUNDS = 50;
 	
 	// Console
-	private static final boolean DEBUG = true;
-	private static final boolean GAME_MESSAGES = true;
+	private static final boolean DEBUG = false;
+	private static final boolean GAME_MESSAGES = false;
+	private static final boolean GLOBAL_MESSAGES = true;
 	
 	private static final int START_SANE = 99;
 	private static final int START_INFECTED = 1;
@@ -98,16 +107,16 @@ public class Game {
 	
 	public void run() {
 			
-		if (GAME_MESSAGES) 
+		if (GLOBAL_MESSAGES) 
 			System.out.println("Starting a new game...");
 		
 		this.initialize();
 		
-		if (GAME_MESSAGES) 
+		if (GLOBAL_MESSAGES) 
 			System.out.println("Game begins.");
 							
 		for (round = 1; round <= ROUNDS; round++) {
-			if (GAME_MESSAGES) {
+			if (GLOBAL_MESSAGES) {
 				System.out.println("======== Round : " +  round + " ========");
 			}
 			

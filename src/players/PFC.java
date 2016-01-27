@@ -2,10 +2,10 @@ package players;
 
 import controller.Player;
 
-public class InfectedTown extends Player {
+public class PFC extends Player {
 
 	@Override
 	public String getCmd() {
-		return "java InfectedTown";
+		return "C:\\kotlinc\\bin\\kotlin.bat pfc.PFCKt";
 	}	
 }

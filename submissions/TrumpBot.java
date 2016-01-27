@@ -39,8 +39,14 @@ public class TrumpBot {
         
         for (int j =0;j<3;j++){
             if (thisState.infected > 2) {
+              if (thisState.infected > 20){
+                System.out.print("Q");
+                thisState.infected -= 30;
+              }
+              else {
               System.out.print("C");
               thisState.infected -= 10;
+              }
             }
             else if (thisState.migrationRate > 2) {
               System.out.print("B");
@@ -48,9 +54,9 @@ public class TrumpBot {
             }
             else if (thisState.infectionRate > 2) {
               System.out.print("M");
-              thisState.infectionRate  -= 10;
+              thisState.infectionRate  -= 4;
             }
-            else System.out.println("T");
+            else System.out.print("T");
         }
     }
     
