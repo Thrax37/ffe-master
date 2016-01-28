@@ -1,4 +1,4 @@
-    import sys
+import sys
 import random
 import itertools
 def sample_wr(population, k):
