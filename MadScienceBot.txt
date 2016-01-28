@@ -990,3 +990,579 @@ MIV
 6
 INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 35, 'inf_rate': 9, 'sane': 0, 'infected': 127, 'con_rate': 8, 'id': 10}
 MIV
+
+7
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 45, 'inf_rate': 4, 'sane': 0, 'infected': 120, 'con_rate': 4, 'id': 10}
+MIV
+
+8
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 47, 'inf_rate': 4, 'sane': 0, 'infected': 118, 'con_rate': 11, 'id': 10}
+MIB
+
+9
+INPUT: {'mig_rate': 0, 'let_rate': 12, 'dead': 62, 'inf_rate': 4, 'sane': 0, 'infected': 106, 'con_rate': 7, 'id': 10}
+MIV
+
+10
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 76, 'inf_rate': 3, 'sane': 0, 'infected': 150, 'con_rate': 9, 'id': 10}
+MIV
+
+11
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 88, 'inf_rate': 2, 'sane': 0, 'infected': 145, 'con_rate': 4, 'id': 10}
+MIV
+
+12
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 95, 'inf_rate': 3, 'sane': 0, 'infected': 140, 'con_rate': 7, 'id': 10}
+MIV
+
+13
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 102, 'inf_rate': 2, 'sane': 0, 'infected': 139, 'con_rate': 5, 'id': 10}
+MIV
+
+14
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 104, 'inf_rate': 8, 'sane': 0, 'infected': 138, 'con_rate': 19, 'id': 10}
+MIB
+
+15
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 114, 'inf_rate': 5, 'sane': 0, 'infected': 197, 'con_rate': 20, 'id': 10}
+MIV
+
+16
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 114, 'inf_rate': 5, 'sane': 0, 'infected': 197, 'con_rate': 29, 'id': 10}
+MIB
+
+17
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 114, 'inf_rate': 2, 'sane': 0, 'infected': 198, 'con_rate': 37, 'id': 10}
+OMB
+
+18
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 114, 'inf_rate': 5, 'sane': 0, 'infected': 198, 'con_rate': 44, 'id': 10}
+MIB
+
+19
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 114, 'inf_rate': 1, 'sane': 0, 'infected': 206, 'con_rate': 49, 'id': 10}
+OMB
+
+20
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 139, 'inf_rate': 9, 'sane': 0, 'infected': 290, 'con_rate': 61, 'id': 10}
+MIV
+
+21
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 144, 'inf_rate': 6, 'sane': 0, 'infected': 286, 'con_rate': 57, 'id': 10}
+MIB
+
+22
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 155, 'inf_rate': 9, 'sane': 0, 'infected': 276, 'con_rate': 63, 'id': 10}
+MIB
+
+23
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 155, 'inf_rate': 9, 'sane': 0, 'infected': 276, 'con_rate': 63, 'id': 10}
+MIV
+
+24
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 157, 'inf_rate': 9, 'sane': 0, 'infected': 275, 'con_rate': 63, 'id': 10}
+MIB
+
+25
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 161, 'inf_rate': 6, 'sane': 0, 'infected': 409, 'con_rate': 63, 'id': 10}
+MIB
+
+26
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 181, 'inf_rate': 12, 'sane': 0, 'infected': 391, 'con_rate': 71, 'id': 10}
+MIV
+
+27
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 188, 'inf_rate': 6, 'sane': 0, 'infected': 390, 'con_rate': 63, 'id': 10}
+MIB
+
+28
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 199, 'inf_rate': 8, 'sane': 0, 'infected': 380, 'con_rate': 68, 'id': 10}
+MIB
+
+29
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 218, 'inf_rate': 11, 'sane': 0, 'infected': 361, 'con_rate': 80, 'id': 10}
+MIV
+
+30
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 228, 'inf_rate': 8, 'sane': 0, 'infected': 532, 'con_rate': 76, 'id': 10}
+MIB
+
+31
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 249, 'inf_rate': 10, 'sane': 0, 'infected': 514, 'con_rate': 88, 'id': 10}
+MIV
+
+32
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 259, 'inf_rate': 9, 'sane': 0, 'infected': 506, 'con_rate': 93, 'id': 10}
+MIV
+
+33
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 259, 'inf_rate': 5, 'sane': 0, 'infected': 507, 'con_rate': 86, 'id': 10}
+MIB
+
+34
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 284, 'inf_rate': 2, 'sane': 0, 'infected': 483, 'con_rate': 88, 'id': 10}
+MIV
+
+35
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 334, 'inf_rate': 1, 'sane': 0, 'infected': 675, 'con_rate': 84, 'id': 10}
+MIV
+
+36
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 388, 'inf_rate': 3, 'sane': 0, 'infected': 622, 'con_rate': 82, 'id': 10}
+MIV
+
+37
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 412, 'inf_rate': 2, 'sane': 0, 'infected': 599, 'con_rate': 78, 'id': 10}
+MIB
+
+38
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 448, 'inf_rate': 3, 'sane': 0, 'infected': 569, 'con_rate': 83, 'id': 10}
+MIV
+
+39
+INPUT: {'mig_rate': 0, 'let_rate': 11, 'dead': 510, 'inf_rate': 4, 'sane': 0, 'infected': 507, 'con_rate': 81, 'id': 10}
+MIV
+
+40
+INPUT: {'mig_rate': 0, 'let_rate': 11, 'dead': 563, 'inf_rate': 6, 'sane': 0, 'infected': 707, 'con_rate': 79, 'id': 10}
+MIV
+
+41
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 598, 'inf_rate': 1, 'sane': 0, 'infected': 672, 'con_rate': 80, 'id': 10}
+MIV
+
+42
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 624, 'inf_rate': 5, 'sane': 0, 'infected': 646, 'con_rate': 85, 'id': 10}
+MIV
+
+43
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 636, 'inf_rate': 4, 'sane': 0, 'infected': 634, 'con_rate': 88, 'id': 10}
+MIV
+
+44
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 636, 'inf_rate': 5, 'sane': 0, 'infected': 634, 'con_rate': 86, 'id': 10}
+MIB
+
+45
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 683, 'inf_rate': 2, 'sane': 0, 'infected': 904, 'con_rate': 86, 'id': 10}
+MIV
+
+46
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 692, 'inf_rate': 5, 'sane': 0, 'infected': 895, 'con_rate': 82, 'id': 10}
+MIV
+
+47
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 700, 'inf_rate': 4, 'sane': 0, 'infected': 887, 'con_rate': 78, 'id': 10}
+MIV
+
+48
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 744, 'inf_rate': 0, 'sane': 0, 'infected': 843, 'con_rate': 74, 'id': 10}
+MIV
+
+49
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 760, 'inf_rate': 4, 'sane': 0, 'infected': 827, 'con_rate': 77, 'id': 10}
+MIV
+
+50
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 822, 'inf_rate': 0, 'sane': 0, 'infected': 1183, 'con_rate': 73, 'id': 10}
+CCC
+
+1
+INPUT: {'mig_rate': 5, 'let_rate': 17, 'dead': 0, 'inf_rate': 4, 'sane': 81, 'infected': 19, 'con_rate': 7, 'id': 11}
+IVB
+
+2
+INPUT: {'mig_rate': 0, 'let_rate': 18, 'dead': 7, 'inf_rate': 5, 'sane': 40, 'infected': 55, 'con_rate': 5, 'id': 11}
+MIV
+
+3
+INPUT: {'mig_rate': 0, 'let_rate': 12, 'dead': 16, 'inf_rate': 1, 'sane': 37, 'infected': 50, 'con_rate': 2, 'id': 11}
+MIV
+
+4
+INPUT: {'mig_rate': 0, 'let_rate': 14, 'dead': 25, 'inf_rate': 6, 'sane': 23, 'infected': 56, 'con_rate': 9, 'id': 11}
+MIV
+
+5
+INPUT: {'mig_rate': 0, 'let_rate': 22, 'dead': 46, 'inf_rate': 8, 'sane': 0, 'infected': 97, 'con_rate': 8, 'id': 11}
+MIV
+
+6
+INPUT: {'mig_rate': 0, 'let_rate': 19, 'dead': 65, 'inf_rate': 3, 'sane': 0, 'infected': 82, 'con_rate': 6, 'id': 11}
+IVE
+
+7
+INPUT: {'mig_rate': 0, 'let_rate': 16, 'dead': 78, 'inf_rate': 2, 'sane': 0, 'infected': 73, 'con_rate': 1, 'id': 11}
+MIV
+
+8
+INPUT: {'mig_rate': 0, 'let_rate': 12, 'dead': 86, 'inf_rate': 3, 'sane': 0, 'infected': 65, 'con_rate': 0, 'id': 11}
+MIV
+
+9
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 93, 'inf_rate': 3, 'sane': 0, 'infected': 58, 'con_rate': 4, 'id': 11}
+MIV
+
+10
+INPUT: {'mig_rate': 0, 'let_rate': 11, 'dead': 104, 'inf_rate': 0, 'sane': 0, 'infected': 76, 'con_rate': 0, 'id': 11}
+MIV
+
+11
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 109, 'inf_rate': 6, 'sane': 0, 'infected': 71, 'con_rate': 4, 'id': 11}
+MIV
+
+12
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 111, 'inf_rate': 2, 'sane': 0, 'infected': 69, 'con_rate': 0, 'id': 11}
+MIV
+
+13
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 112, 'inf_rate': 5, 'sane': 0, 'infected': 68, 'con_rate': 2, 'id': 11}
+MIV
+
+14
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 112, 'inf_rate': 0, 'sane': 0, 'infected': 69, 'con_rate': 5, 'id': 11}
+OIB
+
+15
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 117, 'inf_rate': 6, 'sane': 0, 'infected': 103, 'con_rate': 11, 'id': 11}
+MIV
+
+16
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 124, 'inf_rate': 6, 'sane': 0, 'infected': 96, 'con_rate': 13, 'id': 11}
+MIV
+
+17
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 126, 'inf_rate': 5, 'sane': 0, 'infected': 96, 'con_rate': 11, 'id': 11}
+MIB
+
+18
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 127, 'inf_rate': 6, 'sane': 0, 'infected': 95, 'con_rate': 23, 'id': 11}
+MIV
+
+19
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 127, 'inf_rate': 2, 'sane': 0, 'infected': 95, 'con_rate': 16, 'id': 11}
+OMB
+
+20
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 132, 'inf_rate': 10, 'sane': 0, 'infected': 137, 'con_rate': 29, 'id': 11}
+MIV
+
+21
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 132, 'inf_rate': 4, 'sane': 0, 'infected': 138, 'con_rate': 24, 'id': 11}
+OMB
+
+22
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 134, 'inf_rate': 1, 'sane': 0, 'infected': 136, 'con_rate': 33, 'id': 11}
+OMB
+
+23
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 144, 'inf_rate': 7, 'sane': 0, 'infected': 127, 'con_rate': 35, 'id': 11}
+MIV
+
+24
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 149, 'inf_rate': 6, 'sane': 0, 'infected': 122, 'con_rate': 38, 'id': 11}
+MIV
+
+25
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 161, 'inf_rate': 3, 'sane': 0, 'infected': 171, 'con_rate': 34, 'id': 11}
+MIV
+
+26
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 162, 'inf_rate': 6, 'sane': 0, 'infected': 170, 'con_rate': 31, 'id': 11}
+MIV
+
+27
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 170, 'inf_rate': 2, 'sane': 0, 'infected': 162, 'con_rate': 23, 'id': 11}
+MIV
+
+28
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 170, 'inf_rate': 5, 'sane': 0, 'infected': 162, 'con_rate': 30, 'id': 11}
+MIB
+
+29
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 170, 'inf_rate': 2, 'sane': 0, 'infected': 165, 'con_rate': 27, 'id': 11}
+OMB
+
+30
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 192, 'inf_rate': 6, 'sane': 0, 'infected': 226, 'con_rate': 35, 'id': 11}
+MIV
+
+31
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 198, 'inf_rate': 1, 'sane': 0, 'infected': 221, 'con_rate': 27, 'id': 11}
+MIB
+
+32
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 211, 'inf_rate': 4, 'sane': 0, 'infected': 212, 'con_rate': 27, 'id': 11}
+MIV
+
+33
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 219, 'inf_rate': 2, 'sane': 0, 'infected': 205, 'con_rate': 23, 'id': 11}
+MIB
+
+34
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 229, 'inf_rate': 2, 'sane': 0, 'infected': 196, 'con_rate': 21, 'id': 11}
+MIV
+
+35
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 241, 'inf_rate': 5, 'sane': 0, 'infected': 288, 'con_rate': 15, 'id': 11}
+MIV
+
+36
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 249, 'inf_rate': 0, 'sane': 0, 'infected': 280, 'con_rate': 4, 'id': 11}
+OIB
+
+37
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 263, 'inf_rate': 4, 'sane': 0, 'infected': 266, 'con_rate': 9, 'id': 11}
+MIV
+
+38
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 268, 'inf_rate': 1, 'sane': 0, 'infected': 262, 'con_rate': 0, 'id': 11}
+OMB
+
+39
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 275, 'inf_rate': 11, 'sane': 0, 'infected': 255, 'con_rate': 12, 'id': 11}
+MIV
+
+40
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 282, 'inf_rate': 10, 'sane': 0, 'infected': 375, 'con_rate': 8, 'id': 11}
+MIV
+
+41
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 289, 'inf_rate': 6, 'sane': 0, 'infected': 368, 'con_rate': 7, 'id': 11}
+MIB
+
+42
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 289, 'inf_rate': 6, 'sane': 0, 'infected': 368, 'con_rate': 7, 'id': 11}
+MIB
+
+43
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 292, 'inf_rate': 2, 'sane': 0, 'infected': 365, 'con_rate': 10, 'id': 11}
+MIB
+
+44
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 306, 'inf_rate': 2, 'sane': 0, 'infected': 351, 'con_rate': 15, 'id': 11}
+MIB
+
+45
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 353, 'inf_rate': 2, 'sane': 0, 'infected': 479, 'con_rate': 14, 'id': 11}
+MIV
+
+46
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 386, 'inf_rate': 0, 'sane': 0, 'infected': 446, 'con_rate': 4, 'id': 11}
+MIV
+
+47
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 390, 'inf_rate': 6, 'sane': 0, 'infected': 442, 'con_rate': 1, 'id': 11}
+MIV
+
+48
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 421, 'inf_rate': 1, 'sane': 0, 'infected': 416, 'con_rate': 0, 'id': 11}
+MIV
+
+49
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 445, 'inf_rate': 1, 'sane': 0, 'infected': 392, 'con_rate': 0, 'id': 11}
+MIV
+
+50
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 457, 'inf_rate': 3, 'sane': 0, 'infected': 596, 'con_rate': 0, 'id': 11}
+CCC
+
+1
+INPUT: {'mig_rate': 5, 'let_rate': 17, 'dead': 0, 'inf_rate': 7, 'sane': 89, 'infected': 11, 'con_rate': 13, 'id': 8}
+IVB
+
+2
+INPUT: {'mig_rate': 0, 'let_rate': 13, 'dead': 2, 'inf_rate': 8, 'sane': 82, 'infected': 20, 'con_rate': 16, 'id': 8}
+IVB
+
+3
+INPUT: {'mig_rate': 0, 'let_rate': 16, 'dead': 7, 'inf_rate': 11, 'sane': 58, 'infected': 41, 'con_rate': 16, 'id': 8}
+IVB
+
+4
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 13, 'inf_rate': 12, 'sane': 36, 'infected': 66, 'con_rate': 12, 'id': 8}
+IVB
+
+5
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 26, 'inf_rate': 15, 'sane': 18, 'infected': 130, 'con_rate': 15, 'id': 8}
+MIV
+
+6
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 37, 'inf_rate': 15, 'sane': 0, 'infected': 138, 'con_rate': 14, 'id': 8}
+MIV
+
+7
+INPUT: {'mig_rate': 0, 'let_rate': 12, 'dead': 51, 'inf_rate': 14, 'sane': 0, 'infected': 129, 'con_rate': 12, 'id': 8}
+MIV
+
+8
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 61, 'inf_rate': 13, 'sane': 0, 'infected': 119, 'con_rate': 8, 'id': 8}
+MIV
+
+9
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 65, 'inf_rate': 13, 'sane': 0, 'infected': 117, 'con_rate': 6, 'id': 8}
+MIV
+
+10
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 68, 'inf_rate': 8, 'sane': 0, 'infected': 173, 'con_rate': 7, 'id': 8}
+MIB
+
+11
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 74, 'inf_rate': 8, 'sane': 0, 'infected': 168, 'con_rate': 7, 'id': 8}
+MIB
+
+12
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 79, 'inf_rate': 7, 'sane': 0, 'infected': 164, 'con_rate': 15, 'id': 8}
+MIB
+
+13
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 93, 'inf_rate': 8, 'sane': 0, 'infected': 152, 'con_rate': 20, 'id': 8}
+MIV
+
+14
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 99, 'inf_rate': 5, 'sane': 0, 'infected': 147, 'con_rate': 16, 'id': 8}
+MIE
+
+15
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 107, 'inf_rate': 3, 'sane': 0, 'infected': 213, 'con_rate': 15, 'id': 8}
+MIB
+
+16
+INPUT: {'mig_rate': 0, 'let_rate': 13, 'dead': 134, 'inf_rate': 7, 'sane': 0, 'infected': 187, 'con_rate': 21, 'id': 8}
+MIV
+
+17
+INPUT: {'mig_rate': 0, 'let_rate': 15, 'dead': 158, 'inf_rate': 8, 'sane': 0, 'infected': 163, 'con_rate': 24, 'id': 8}
+MIV
+
+18
+INPUT: {'mig_rate': 0, 'let_rate': 16, 'dead': 180, 'inf_rate': 4, 'sane': 0, 'infected': 141, 'con_rate': 20, 'id': 8}
+MIV
+
+19
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 197, 'inf_rate': 0, 'sane': 0, 'infected': 125, 'con_rate': 11, 'id': 8}
+MIV
+
+20
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 204, 'inf_rate': 2, 'sane': 0, 'infected': 180, 'con_rate': 4, 'id': 8}
+MIV
+
+21
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 204, 'inf_rate': 1, 'sane': 0, 'infected': 184, 'con_rate': 1, 'id': 8}
+MIB
+
+22
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 204, 'inf_rate': 3, 'sane': 0, 'infected': 185, 'con_rate': 0, 'id': 8}
+MIV
+
+23
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 204, 'inf_rate': 0, 'sane': 0, 'infected': 186, 'con_rate': 5, 'id': 8}
+OMB
+
+24
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 204, 'inf_rate': 0, 'sane': 0, 'infected': 187, 'con_rate': 5, 'id': 8}
+OMB
+
+25
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 209, 'inf_rate': 3, 'sane': 0, 'infected': 276, 'con_rate': 11, 'id': 8}
+MIB
+
+26
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 222, 'inf_rate': 0, 'sane': 0, 'infected': 263, 'con_rate': 6, 'id': 8}
+OMB
+
+27
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 232, 'inf_rate': 1, 'sane': 0, 'infected': 257, 'con_rate': 3, 'id': 8}
+MIB
+
+28
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 242, 'inf_rate': 3, 'sane': 0, 'infected': 255, 'con_rate': 0, 'id': 8}
+MIV
+
+29
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 242, 'inf_rate': 0, 'sane': 0, 'infected': 256, 'con_rate': 5, 'id': 8}
+OMB
+
+30
+INPUT: {'mig_rate': 0, 'let_rate': 6, 'dead': 249, 'inf_rate': 4, 'sane': 0, 'infected': 379, 'con_rate': 2, 'id': 8}
+MIV
+
+31
+INPUT: {'mig_rate': 0, 'let_rate': 1, 'dead': 249, 'inf_rate': 0, 'sane': 0, 'infected': 389, 'con_rate': 1, 'id': 8}
+OIB
+
+32
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 249, 'inf_rate': 5, 'sane': 0, 'infected': 398, 'con_rate': 9, 'id': 8}
+MIB
+
+33
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 268, 'inf_rate': 1, 'sane': 0, 'infected': 379, 'con_rate': 6, 'id': 8}
+MIB
+
+34
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 287, 'inf_rate': 0, 'sane': 0, 'infected': 362, 'con_rate': 5, 'id': 8}
+OIB
+
+35
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 287, 'inf_rate': 5, 'sane': 0, 'infected': 544, 'con_rate': 7, 'id': 8}
+MIB
+
+36
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 314, 'inf_rate': 0, 'sane': 0, 'infected': 518, 'con_rate': 5, 'id': 8}
+MIV
+
+37
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 314, 'inf_rate': 2, 'sane': 0, 'infected': 524, 'con_rate': 3, 'id': 8}
+MIB
+
+38
+INPUT: {'mig_rate': 0, 'let_rate': 7, 'dead': 351, 'inf_rate': 5, 'sane': 0, 'infected': 493, 'con_rate': 10, 'id': 8}
+MIV
+
+39
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 385, 'inf_rate': 0, 'sane': 0, 'infected': 460, 'con_rate': 0, 'id': 8}
+OIB
+
+40
+INPUT: {'mig_rate': 0, 'let_rate': 8, 'dead': 447, 'inf_rate': 0, 'sane': 0, 'infected': 629, 'con_rate': 0, 'id': 8}
+MIV
+
+41
+INPUT: {'mig_rate': 0, 'let_rate': 2, 'dead': 491, 'inf_rate': 0, 'sane': 0, 'infected': 595, 'con_rate': 0, 'id': 8}
+OIB
+
+42
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 515, 'inf_rate': 1, 'sane': 0, 'infected': 581, 'con_rate': 2, 'id': 8}
+MIV
+
+43
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 544, 'inf_rate': 0, 'sane': 1, 'infected': 552, 'con_rate': 0, 'id': 8}
+MIV
+
+44
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 588, 'inf_rate': 2, 'sane': 1, 'infected': 509, 'con_rate': 0, 'id': 8}
+MIV
+
+45
+INPUT: {'mig_rate': 0, 'let_rate': 5, 'dead': 626, 'inf_rate': 0, 'sane': 2, 'infected': 725, 'con_rate': 0, 'id': 8}
+MIV
+
+46
+INPUT: {'mig_rate': 0, 'let_rate': 3, 'dead': 662, 'inf_rate': 0, 'sane': 0, 'infected': 692, 'con_rate': 0, 'id': 8}
+OIB
+
+47
+INPUT: {'mig_rate': 0, 'let_rate': 0, 'dead': 662, 'inf_rate': 3, 'sane': 0, 'infected': 693, 'con_rate': 11, 'id': 8}
+OMB
+
+48
+INPUT: {'mig_rate': 0, 'let_rate': 10, 'dead': 738, 'inf_rate': 3, 'sane': 0, 'infected': 618, 'con_rate': 10, 'id': 8}
+MIV
+
+49
+INPUT: {'mig_rate': 0, 'let_rate': 4, 'dead': 787, 'inf_rate': 0, 'sane': 0, 'infected': 570, 'con_rate': 0, 'id': 8}
+OIB
+
+50
+INPUT: {'mig_rate': 0, 'let_rate': 9, 'dead': 864, 'inf_rate': 2, 'sane': 0, 'infected': 789, 'con_rate': 0, 'id': 8}
+CCC

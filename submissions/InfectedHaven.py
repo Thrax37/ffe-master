@@ -1,4 +1,5 @@
 # parsing code
+from sys import argv
 args = argv[1].split(";")
 
 n = int(args[0])
@@ -26,9 +27,9 @@ elif n == 1:
     print(actions)
     exit()
 
-if me["lethality"] >= 7:
+if me["lethality"] >= 9:
     actions += "III"
-elif me["lethality"] >= 1:
+elif me["lethality"] >= 3:
     actions += "WII"
 else:
     actions += "WWI"
