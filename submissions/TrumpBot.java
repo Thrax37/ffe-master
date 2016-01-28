@@ -56,7 +56,10 @@ public class TrumpBot {
               System.out.print("M");
               thisState.infectionRate  -= 4;
             }
-            else System.out.print("T");
+            else {
+              System.out.print("T");
+              thisState.infected += 4;
+            }
         }
     }
     

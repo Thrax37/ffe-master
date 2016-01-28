@@ -13,35 +13,37 @@ import players.*;
 public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
-		new BioterroristBot(),
+		new BioterroristBot(), // D
 		new Crossroads(),
 		new CullBot(),
 		new DisseminationBot(),
 		new FamilyValues(),
-		new InfectedHaven(),
-		new InfectedTown(),
-		new InfectionBot(),
+		new InfectedHaven(), // D
+		new InfectedTown(), // I
+		new InfectionBot(), // I
 		new Madagascar(),
-		new MadScienceBot(),
+		new MadScienceBot(), // I
 		new Medic(),
 		new MedicBot(),
 		new Mooch(),
+		new OpenAndClose(),
 		new PassiveBot(),
-		new PassiveBot(),
+		new PFC(), // I (C)
 		new Researcher(),
-		new Socialist(),
+		new Salt(),
+		new Socialist(), // I
 		new Strategist(),
-		new Terrorist(),
+		new Terrorist(), // I
 		new TheCure(),
 		new TheKeeper(),
-		new ThePacifist(),
+		new ThePacifist(), // I
 		new Triage(),
 		new TrumpBot(),
 		new UndecidedBot(),
 		new WeaponOfMassDissemination(),
 		new WICKED(),
 		new XenoBot(),
-		new ZombieState()
+		new ZombieState() // I(C)
 	};
 	
 	// Game Parameters
@@ -49,7 +51,7 @@ public class Game {
 	
 	// Console
 	private static final boolean DEBUG = false;
-	private static final boolean GAME_MESSAGES = false;
+	private static final boolean GAME_MESSAGES = true;
 	private static final boolean GLOBAL_MESSAGES = true;
 	
 	private static final int START_SANE = 99;
@@ -225,6 +227,8 @@ public class Game {
 				if (onePlayerLeft()) return false;
 			}
 		}
+		
+		if (GLOBAL_MESSAGES) printStatus();
 		
 		return true;
 	}
@@ -421,6 +425,9 @@ public class Game {
 				
 				migrantsHealthy.put(state, stateMigrationHealthy);
 				migrantsInfected.put(state, stateMigrationInfected);
+			} else {
+				migrantsHealthy.put(state, 0);
+				migrantsInfected.put(state, 0);
 			}
 		}
 		
@@ -547,6 +554,48 @@ public class Game {
 			Score score = scores.get(i);
 			System.out.println(i+1 + ". " + score.print());
 		}
+		
+	}
+	
+	private void printStatus() {
+		
+		List<Status> status = new ArrayList<Status>();
+		
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		
+		for (Player player : players) {
+			int healthy = 0;
+			int infected = 0;
+			int dead = 0;
+			int infectionRate = 0;
+			int contagionRate= 0;
+			int lethalityRate = 0;
+			int migrationRate = 0;
+			
+			for (State state : states) {
+				if (player.equals(state.getOwner())) {
+					healthy += state.getHealthy();
+					infected += state.getInfected();
+					dead += state.getDead();
+					infectionRate += state.getInfectionRate();
+					contagionRate += state.getContagionRate();
+					lethalityRate += state.getLethalityRate();
+					migrationRate += state.getMigrationRate();
+				}
+			}
+			
+			status.add(new Status(player, healthy, infected, dead, infectionRate, contagionRate, lethalityRate, migrationRate));
+		}
+		
+		//sort descending
+		Collections.sort(status, Collections.reverseOrder());
+		
+		for (int i = 0; i < status.size(); i++) {
+			Status stat = status.get(i);
+			System.out.println(i+1 + ". " + stat.print());
+		}
+		
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		
 	}
 	
