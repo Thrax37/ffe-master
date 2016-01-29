@@ -13,14 +13,15 @@ import players.*;
 public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
-//		new BioterroristBot(), // D
+		new BioterroristBot(), // D
 		new Crossroads(),
 		new CullBot(),
+		new CureThenQuarantine(),
 		new DisseminationBot(),
 		new FamilyValues(),
 		new InfectedHaven(), // D
-//		new InfectedTown(), // I
-//		new InfectionBot(), // I
+		new InfectedTown(), // I
+		new InfectionBot(), // I
 		new Israel(),
 		new Madagascar(),
 		new MadScienceBot(), // I
@@ -29,24 +30,27 @@ public class Game {
 		new Mooch(),
 		new OpenAndClose(),
 		new PassiveBot(),
-//		new PFC(), // I (C)
+		new PFC(), // I (C)
+		new Piecemeal(),
 		new PureBot(),
 		new RedCross(),
+		new RemoveInfected(),
 		new Researcher(),
 		new Salt(),
-//		new Socialist(), // I
+		new Socialist(), // I
+		new Smaug(), // D
 		new Strategist(),
-//		new Terrorist(), // I
+		new Terrorist(), // I
 		new TheCure(),
 		new TheKeeper(),
-//		new ThePacifist(), // I
+		new ThePacifist(), // I
 		new Triage(),
 		new TrumpBot(),
 		new UndecidedBot(),
 		new WeaponOfMassDissemination(),
 		new WICKED(),
 		new XenoBot(),
-//		new ZombieState() // I(C)
+		new ZombieState() // I(C)
 	};
 	
 	// Game Parameters

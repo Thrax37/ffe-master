@@ -37,7 +37,7 @@ elif n == 50:
 
 
 if nextInfected*1.2 > 30:
-    if me["infected"] >= 15:
+    if me["infected"] >= 23:
         actions += "Q"
         me["infected"] -= 30
     else:
