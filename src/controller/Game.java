@@ -19,15 +19,17 @@ public class Game {
 		new CureThenQuarantine(),
 		new DisseminationBot(),
 		new FamilyValues(),
-		new InfectedHaven(), // D
+		new Graymalkin(),
+		new InfectedHaven(), 
 		new InfectedTown(), // I
 		new InfectionBot(), // I
 		new Israel(),
 		new Madagascar(),
-		new MadScienceBot(), // I
+		new MadScienceBot(),
 		new Medic(),
 		new MedicBot(),
 		new Mooch(),
+		new Obamacare(),
 		new OpenAndClose(),
 		new PassiveBot(),
 		new PFC(), // I (C)
@@ -57,7 +59,7 @@ public class Game {
 	private static final int ROUNDS = 50;
 	
 	// Console
-	private static final boolean DEBUG = false;
+	private static final boolean DEBUG = true;
 	private static final boolean GAME_MESSAGES = true;
 	private static final boolean GLOBAL_MESSAGES = true;
 	
@@ -164,7 +166,7 @@ public class Game {
 		if (onePlayerLeft()) return false;
 		if (DEBUG) System.out.println("--- Phase 2 : Reproduction ---");
 		reproduction();
-				
+		
 		// Phase 3 : Migration
 		if (onePlayerLeft()) return false;
 		if (DEBUG) System.out.println("--- Phase 3 : Migration ---");
@@ -174,7 +176,7 @@ public class Game {
 		if (onePlayerLeft()) return false;
 		if (DEBUG) System.out.println("--- Phase 4 : Infection ---");
 		infection();
-				
+		
 		// Phase 5 : Contagion
 		if (onePlayerLeft()) return false;
 		if (DEBUG) System.out.println("--- Phase 5 : Contagion ---");
@@ -389,13 +391,13 @@ public class Game {
 		int migrationHealthy = 0;
 		int migrationInfected = 0;
 		int migrationWeight = 0;
-		
+			
 		// Emigration
 		for (State state : states) {
 			
 			int stateMigrationHealthy = Math.min(state.getHealthy(), Math.floorDiv(state.getHealthy() * state.getMigrationRate(), 100));
 			int stateMigrationInfected = Math.min(state.getHealthy(), Math.floorDiv(state.getInfected() * state.getMigrationRate(), 100));
-			
+
 			state.setHealthy(state.getHealthy() - stateMigrationHealthy);
 			state.setInfected(state.getInfected() - stateMigrationInfected);
 
@@ -411,7 +413,7 @@ public class Game {
 		Map<State, Double> remainders = new LinkedHashMap<State, Double>();
 		Map<State, Integer> migrantsHealthy = new HashMap<State, Integer>();
 		Map<State, Integer> migrantsInfected = new HashMap<State, Integer>();
-				
+
 		// Immigration
 		for (State state : states) {
 			
@@ -420,16 +422,20 @@ public class Game {
 				int migrationRate = state.getMigrationRate();
 				int migrationRatio = Math.floorDiv(migrationRate * 100, migrationWeight);
 				int stateMigrationHealthy = Math.floorDiv(migrationHealthy * migrationRatio, 100);
-				double remainder = (double) (migrationHealthy * migrationRatio / 100.0) % 1.0;
 				int stateMigrationInfected = Math.floorDiv(migrationInfected * migrationRatio, 100);
+				
+				double remainder = (double) (migrationHealthy * migrationRatio / 100.0) % 1.0;
+				if (remainder <= 0.0)
+					remainder = (double) (migrationInfected * migrationRatio / 100.0) % 1.0;
+				if (remainder > 0.0)
+					remainders.put(state, remainder);
 				
 				state.setHealthy(state.getHealthy() + stateMigrationHealthy);
 				state.setInfected(state.getInfected() + stateMigrationInfected);
 				
 				migrationHealtyRemainder -= stateMigrationHealthy;
 				migrationInfectedRemainder -= stateMigrationInfected;
-				remainders.put(state, remainder);
-				
+								
 				migrantsHealthy.put(state, stateMigrationHealthy);
 				migrantsInfected.put(state, stateMigrationInfected);
 			} else {
@@ -443,18 +449,18 @@ public class Game {
 		while (migrationHealtyRemainder + migrationInfectedRemainder > 0) {
 			
 			State state = (State) remainders.keySet().toArray()[index];
-			
+						
 			if (migrationHealtyRemainder > 0) {
 				state.setHealthy(state.getHealthy() + 1);
 				migrantsHealthy.put(state, migrantsHealthy.get(state) + 1);
 				migrationHealtyRemainder--;
-				index++;
 			} else if (migrationInfectedRemainder > 0) {
-				state.setInfected(state.getInfected() + migrationInfectedRemainder);
+				state.setInfected(state.getInfected() + 1);
 				migrantsInfected.put(state, migrantsInfected.get(state) + 1);
 				migrationInfectedRemainder--;
-				index++;
 			}
+		
+			index++;
 			
 			if (index >= remainders.size()) 
 				index = 0;

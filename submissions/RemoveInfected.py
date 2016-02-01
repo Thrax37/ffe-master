@@ -12,8 +12,9 @@ V_RATE=(1,.04)
 
 def find_me(args):
     for player in args:
+        player=player.split('_')
         if int(player[0])==me:
-            return player.split('_')
+            return player
 
 def actions_available():
     global actions
