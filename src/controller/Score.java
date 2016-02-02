@@ -40,5 +40,25 @@ public class Score implements Comparable<Score> {
 		}
 		
 		return 0;
-	}	
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public int getHealthy() {
+		return healthy;
+	}
+
+	public int getInfected() {
+		return infected;
+	}
+
+	public int getDead() {
+		return dead;
+	}
+	
+	
+	
+	
 }

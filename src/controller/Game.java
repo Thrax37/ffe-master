@@ -57,11 +57,12 @@ public class Game {
 	
 	// Game Parameters
 	private static final int ROUNDS = 50;
+	private static final int GAMES = 10;
 	
 	// Console
-	private static final boolean DEBUG = true;
-	private static final boolean GAME_MESSAGES = true;
-	private static final boolean GLOBAL_MESSAGES = true;
+	private static final boolean DEBUG = false;
+	private static final boolean GAME_MESSAGES = false;
+	private static final boolean GLOBAL_MESSAGES = false;
 	
 	private static final int START_SANE = 99;
 	private static final int START_INFECTED = 1;
@@ -112,11 +113,55 @@ public class Game {
 	}
 	
 	public static void main(String... args) {
+		
+		List<List<Score>> totalScores = new ArrayList<>();
+		
 		// Starting
-		new Game().run();
+		for (int i = 0; i < GAMES; i++) {
+			totalScores.add(new Game().run());
+		}
+		
+		// Scores
+		Map<Player, List<Score>> playerScores = new HashMap<>();
+		for (List<Score> scores : totalScores) {
+			for (Score score : scores) {
+				if (playerScores.get(score.getPlayer()) == null) {
+					playerScores.put(score.getPlayer(), new ArrayList<>());
+				}
+				playerScores.get(score.getPlayer()).add(score);
+			}
+		}
+		
+		List<Score> finalScores = new ArrayList<>();
+		for (Player player : playerScores.keySet()) {
+			int healthy = 0;
+			int infected = 0;
+			int dead = 0;
+			
+			for (Score score : playerScores.get(player)) {
+				healthy += score.getHealthy();
+				infected += score.getInfected();
+				dead += score.getDead();
+			}
+			
+			healthy = Math.floorDiv(healthy, playerScores.get(player).size());
+			infected = Math.floorDiv(infected, playerScores.get(player).size());
+			dead = Math.floorDiv(dead, playerScores.get(player).size());
+			
+			finalScores.add(new Score(player, healthy, infected, dead));
+		}
+		
+		//sort descending
+		Collections.sort(finalScores, Collections.reverseOrder());
+		
+		System.out.println("################################");
+		for (int i = 0; i < finalScores.size(); i++) {
+			Score score = finalScores.get(i);
+			System.out.println(i+1 + ". " + score.print());
+		}
 	}	
 	
-	public void run() {
+	public List<Score> run() {
 			
 		if (GLOBAL_MESSAGES) 
 			System.out.println("Starting a new game...");
@@ -136,7 +181,7 @@ public class Game {
 			if (!makeTurns()) break; //break if only no player left
 		}
 	
-		printResults();
+		return printResults();
 	}
 	
 	private void initialize() {		
@@ -538,7 +583,7 @@ public class Game {
 		return builder.toString();
 	}
 	
-	private void printResults() {
+	private List<Score> printResults() {
 		
 		List<Score> scores = new ArrayList<Score>();
 		
@@ -567,6 +612,8 @@ public class Game {
 			Score score = scores.get(i);
 			System.out.println(i+1 + ". " + score.print());
 		}
+		
+		return scores;
 		
 	}
 	
