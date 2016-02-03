@@ -31,28 +31,39 @@ if round == 50:
     if players[myid][Infected] > 20: output = "CCC"
     elif players[myid][Infected]> 6: output = "CTC"
     else: output = "TTC"
-if players[myid][Sane] > players[myid][Infected] > 30: 
-    output +="Q"
-    players[myid][Infected] -= min(players[myid][Infected],30)
-elif players[myid][Sane] > players[myid][Infected] > 20:
-    output+="CC"
-    players[myid][Infected] -= min(players[myid][Infected],20)
-elif round <= 5 and players[myid][Infected] > 10:
-    output+="C"
-    players[myid][Infected] -= min(players[myid][Infected],10)
+if round == 48 and players[myid][Infected] > 45 and players[myid][InfectionRate]>12:
+    output = "MMM"
+if round == 49 and players[myid][Infected] > 30:
+    output = "CCC"
 if (round+1)%5==0:
     if players[myid][Sane]==0 or players[myid][Infected]/players[myid][Sane] > 2: output+="I"*(players[myid][LethalityRate]/4)
     output+="M"*(players[myid][InfectionRate]/4)
     output+="C"*max((players[myid][Infected]/10),1)
+if players[myid][InfectionRate] < 8 and players[myid][ContagionRate] < 20 and players[myid][Sane]+min(players[myid][Infected]/5,60)>players[myid][Infected] and (round+2)%5==0:
+    output+="C"*max((players[myid][Infected]/10),1)
+    players[myid][Infected] -= min(max((players[myid][Infected]/10),1)*10,players[myid][Infected])
+if players[myid][Sane] > players[myid][Infected] > 30: 
+    output +="Q"
+    players[myid][Infected] -= min(players[myid][Infected],30)
+if players[myid][Sane] > players[myid][Infected] > 20:
+    output+="CC"
+    players[myid][Infected] -= min(players[myid][Infected],20)
+if (players[myid][Sane] > 2*players[myid][Infected] > 20):
+    output+="C"
+    players[myid][Infected] -= min(players[myid][Infected],10)
+if round <= 5 and players[myid][Infected] > 10:
+    output+="C"
+    players[myid][Infected] -= min(players[myid][Infected],10)
+if 25 <= players[myid][Infected] < 40 and players[myid][InfectionRate]<10:# and players[myid][ContagionRate]*(players[myid][Infected]-20)/100 < 10:
+    output+="CCC"
+
 if players[myid][InfectionRate]-players[myid][ContagionRate]>10: output+="M"
 if players[myid][ContagionRate]-players[myid][InfectionRate]>20: output+="E"
 population = []
 population +=["I" for i in range(int(1.15**players[myid][LethalityRate]))]
-if players[myid][Sane]<10: population+=["I" if players[myid][LethalityRate]>6 else "V" for i in range(players[myid][InfectionRate])]
-if players[myid][Sane]+players[myid][Infected]>10: population += ["M" if players[myid][InfectionRate] > 4 else "V" for i in range(2*max(players[myid][InfectionRate]*players[myid][Sane]/100,int(1.15**players[myid][InfectionRate])))]
-if players[myid][Sane]+players[myid][Infected]>10: population += ["E" if players[myid][ContagionRate] > 8 else "V" for i in range(max(min(players[myid][Sane],players[myid][ContagionRate]*players[myid][Infected]/100),int(1.15**players[myid][ContagionRate])))]
-if players[myid][MigrationRate]<100: population += ["O" for i in range(2*worldpopulation/max((len(a)-2)*(players[myid][Sane]+players[myid][Infected]),1))]
-if players[myid][MigrationRate]>0: population += ["B" for i in range((players[myid][Sane]+players[myid][Infected]*(100-players[myid][LethalityRate])/100)*(len(a)-2)/worldpopulation)]
+if players[myid][Sane]<10 or players[myid][Infected]-players[myid][Sane]>10: population+=["I" if players[myid][LethalityRate]>8 else "V" for i in range(players[myid][InfectionRate])]
+if players[myid][Sane]+players[myid][Infected]>10 and (players[myid][Sane]>15 or players[myid][LethalityRate]<10): population += ["M" if players[myid][InfectionRate] > 6 else "V" for i in range(2*max(players[myid][InfectionRate]*players[myid][Sane]/100,int((1.15+0.002*(50-round))**players[myid][InfectionRate])))]
+if players[myid][Sane]+players[myid][Infected]>10 and (players[myid][Sane]>15 or players[myid][LethalityRate]<10): population += ["E" if players[myid][ContagionRate] > 10 else "V" for i in range(max(min(players[myid][Sane],players[myid][ContagionRate]*players[myid][Infected]/100),int(1.15**players[myid][ContagionRate])))]
 if players[myid][InfectionRate]+players[myid][ContagionRate]<15: population += ["C" for i in range(players[myid][Infected])]
 if players[myid][Infected] < 10: population += ["WV" for i in range(int(1.05**round))]
 output += ''.join(sample_wr(population,3))

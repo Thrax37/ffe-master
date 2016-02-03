@@ -26,7 +26,7 @@ if int(infected) < int(healthy):
 if int(infected) >= int(healthy):
     out.append("CI")
 if int(infected) >= 30:
-    out.append("Q")
+    out.append("C")
 else:
     out.append("T")
 
