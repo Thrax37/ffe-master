@@ -101,7 +101,7 @@ public class MedicBot {
 		}
 
 		public boolean isMine(){
-            return getOwnerId() == playerID;
+            return getOwnerId() == thisTownID;
         }
 
     }

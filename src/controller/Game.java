@@ -14,10 +14,13 @@ public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
 		new BioterroristBot(), // D
+		new BipolarBot(), // I
+		new BlunderBot(),
 		new Crossroads(),
 		new CullBot(),
 		new CureThenQuarantine(),
 		new DisseminationBot(),
+		new EvilBot(), // I
 		new FamilyValues(),
 		new Graymalkin(),
 		new InfectedHaven(), 

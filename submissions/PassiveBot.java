@@ -96,7 +96,7 @@ public class PassiveBot {
 		}
 
 		public boolean isMine(){
-            return getOwnerId() == playerID;
+            return getOwnerId() == thisTownID;
         }
 
     }

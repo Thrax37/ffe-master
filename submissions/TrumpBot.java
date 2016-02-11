@@ -18,49 +18,63 @@ public class TrumpBot {
     }
     
     private void sleep(String[] args) {
-    	
-    	round = Integer.parseInt(args[0]);
-		thisTownID = Integer.parseInt(args[1]);
-		
-		states = new ArrayList<>();
-		otherStates = new ArrayList<>();
-		
+
+        round = Integer.parseInt(args[0]);
+        thisTownID = Integer.parseInt(args[1]);
+
+        states = new ArrayList<>();
+        //states.add(new State(args[thisTownID+2]));
+
+        otherStates = new ArrayList<>();
+
+
         for (int i = 2; i < args.length; i++){
-        	states.add(new State(args[i]));
+            states.add(new State(args[i]));
         }
 
         for (State state : states){
-            if (state.isMine()) {
-            	thisState = state;
+            if (state.ownerId == thisTownID) {
+                thisState = state;
             } else {
                 otherStates.add(state);
             }
         }
-        
+
+        StringBuilder cmd = new StringBuilder();
+
         for (int j =0;j<3;j++){
-            if (thisState.infected > 2) {
+            if (thisState.infected > 6) {
               if (thisState.infected > 20){
-                System.out.print("Q");
+                cmd.append("Q");
                 thisState.infected -= 30;
               }
               else {
-              System.out.print("C");
-              thisState.infected -= 10;
+                cmd.append("C");
+                thisState.infected -= 10;
               }
             }
             else if (thisState.migrationRate > 2) {
-              System.out.print("B");
+              cmd.append("B");
               thisState.migrationRate -= 10;
             }
-            else if (thisState.infectionRate > 2) {
-              System.out.print("M");
+            else if (thisState.infectionRate > 4) {
+              cmd.append("M");
               thisState.infectionRate  -= 4;
             }
-            else {
-              System.out.print("T");
-              thisState.infected += 4;
+            else if (thisState.contagionRate > 10 || thisState.lethalityRate > 6 || thisState.infectionRate > 0) {
+              cmd.append("V");
+              thisState.contagionRate  -= 4;
+              thisState.lethalityRate  -= 2;
+              thisState.infectionRate  -= 1;
             }
+
+            else if (thisState.infected % 10 <= 6){
+              cmd.append("T");
+              thisState.infected +=4;
+            }
+            else cmd.append("V");
         }
+        System.out.print(cmd.reverse());
     }
     
     private class State {
@@ -70,8 +84,8 @@ public class TrumpBot {
         public int infected;
         public final int dead;
         public int infectionRate;
-        public final int contagionRate;
-        public final int lethalityRate;
+        public int contagionRate;
+        public int lethalityRate;
         public int migrationRate;
 
         public State(String string) {
@@ -127,7 +141,7 @@ public class TrumpBot {
 		}
 
 		public boolean isMine(){
-            return getOwnerId() == playerID;
+            return getOwnerId() == thisTownID;
         }
 
     }

@@ -96,7 +96,7 @@ public class BioterroristBot {
 		}
 
 		public boolean isMine(){
-            return getOwnerId() == playerID;
+            return getOwnerId() == thisTownID;
         }
 
     }

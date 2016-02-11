@@ -117,7 +117,7 @@ public class InfectionBot {
 		}
 
 		public boolean isMine(){
-            return getOwnerId() == playerID;
+            return getOwnerId() == thisTownID;
         }
 
     }
