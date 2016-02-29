@@ -12,58 +12,59 @@ import players.*;
 
 public class Game {
 	private static Player[] players = {
-		new AllOrNothing(),
-//		new BioterroristBot(), // D
-		new BipolarBot(),
-		new BlunderBot(),
-		new Crossroads(),
-		new CullBot(),
-		new CureThenQuarantine(),
-		new DisseminationBot(),
-//		new EvilBot(), // I
-		new FamilyValues(),
-		new Graymalkin(),
-		new InfectedHaven(), 
-//		new InfectedTown(), // I
-//		new InfectionBot(), // I
-		new Israel(),
-		new Madagascar(),
-		new MadScienceBot(),
-		new Medic(),
-		new MedicBot(),
-		new Mooch(),
-		new Obamacare(),
-		new OpenAndClose(),
+		new AllOrNothing(), // OK (2016-02-29)
+		new BackStabber(), // OK (2016-02-29)
+		new BioterroristBot(), // DEAD (2016-02-29)
+		new BipolarBot(), // INFECTED (2016-02-29)
+		new BlunderBot(), // OK (2016-02-29)
+		new Crossroads(), // OK (2016-02-29)
+		new CullBot(), // OK (2016-02-29)
+		new CureThenQuarantine(), // OK (2016-02-29)
+		new DisseminationBot(), // INFECTED (2016-02-29)
+		new EvilBot(), // INFECTED (2016-02-29)
+		new FamilyValues(), // OK (2016-02-29)
+		new Graymalkin(), // OK (2016-02-29)
+		new InfectedHaven(), // INFECTED (2016-02-29) 
+		new InfectedTown(), // INFECTED (2016-02-29)
+		new InfectionBot(), // INFECTED (2016-02-29)
+		new Israel(), // OK (2016-02-29)
+		new Madagascar(), // OK (2016-02-29)
+		new MadScienceBot(), // INFECTED (2016-02-29)
+		new Medic(), // OK (2016-02-29)
+		new MedicBot(), // OK (2016-02-29)
+		new Mooch(), // OK (2016-02-29)
+		new Obamacare(), // OK (2016-02-29)
+		new OpenAndClose(), // OK (2016-02-29) 
 		new PassiveBot(),
-//		new PFC(), // I (C)
-		new Piecemeal(),
-		new PureBot(),
-		new RedCross(),
-		new RemoveInfected(),
-		new Researcher(),
-		new Salt(),
-//		new Socialist(), // I
-//		new Smaug(), // D
-		new Strategist(),
-//		new Terrorist(), // I
-		new TheCure(),
-		new TheKeeper(),
-//		new ThePacifist(), // I
-		new Triage(),
-		new TrumpBot(),
-		new UndecidedBot(),
-		new WeaponOfMassDissemination(),
-		new WICKED(),
-		new XenoBot(),
-//		new ZombieState() // I(C)
+		new PFC(), // INFECTED (2016-02-29)
+		new Piecemeal(), // OK (2016-02-29)
+		new PureBot(), // OK (2016-02-29)
+		new RedCross(), // OK (2016-02-29)
+		new RemoveInfected(), // OK (2016-02-29)
+		new Researcher(), // OK (2016-02-29)
+		new Salt(), // OK (2016-02-29)
+		new Smaug(), // DEAD (2016-02-29)
+		new Socialist(), // OK (2016-02-29)
+		new Strategist(), // OK (2016-02-29)
+		new Terrorist(), // INFECTED (2016-02-29)
+		new TheCure(), // OK (2016-02-29)
+		new TheKeeper(), // OK (2016-02-29)
+		new ThePacifist(), // OK (2016-02-29)
+		new Triage(), // OK (2016-02-29)
+		new TrumpBot(), // OK (2016-02-29)
+		new UndecidedBot(), // OK (2016-02-29)
+		new WeaponOfMassDissemination(), // DEAD (2016-02-29)
+		new WICKED(), // OK (2016-02-29)
+		new XenoBot(), // OK (2016-02-29)
+		new ZombieState() // INFECTED (2016-02-29)
 	};
 	
 	// Game Parameters
 	private static final int ROUNDS = 50;
-	private static final int GAMES = 100;
+	private static final int GAMES = 1;
 	
 	// Console
-	private static final boolean DEBUG = false;
+	private static final boolean DEBUG = true;
 	private static final boolean GAME_MESSAGES = false;
 	private static final boolean GLOBAL_MESSAGES = false;
 	
