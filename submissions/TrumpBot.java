@@ -43,8 +43,8 @@ public class TrumpBot {
         StringBuilder cmd = new StringBuilder();
 
         for (int j =0;j<3;j++){
-            if (thisState.infected > 6) {
-              if (thisState.infected > 20){
+            if (thisState.infected > 7) {
+              if (thisState.infected > 25){
                 cmd.append("Q");
                 thisState.infected -= 30;
               }

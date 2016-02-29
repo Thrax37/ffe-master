@@ -13,19 +13,19 @@ import players.*;
 public class Game {
 	private static Player[] players = {
 		new AllOrNothing(),
-		new BioterroristBot(), // D
-		new BipolarBot(), // I
+//		new BioterroristBot(), // D
+		new BipolarBot(),
 		new BlunderBot(),
 		new Crossroads(),
 		new CullBot(),
 		new CureThenQuarantine(),
 		new DisseminationBot(),
-		new EvilBot(), // I
+//		new EvilBot(), // I
 		new FamilyValues(),
 		new Graymalkin(),
 		new InfectedHaven(), 
-		new InfectedTown(), // I
-		new InfectionBot(), // I
+//		new InfectedTown(), // I
+//		new InfectionBot(), // I
 		new Israel(),
 		new Madagascar(),
 		new MadScienceBot(),
@@ -35,32 +35,32 @@ public class Game {
 		new Obamacare(),
 		new OpenAndClose(),
 		new PassiveBot(),
-		new PFC(), // I (C)
+//		new PFC(), // I (C)
 		new Piecemeal(),
 		new PureBot(),
 		new RedCross(),
 		new RemoveInfected(),
 		new Researcher(),
 		new Salt(),
-		new Socialist(), // I
-		new Smaug(), // D
+//		new Socialist(), // I
+//		new Smaug(), // D
 		new Strategist(),
-		new Terrorist(), // I
+//		new Terrorist(), // I
 		new TheCure(),
 		new TheKeeper(),
-		new ThePacifist(), // I
+//		new ThePacifist(), // I
 		new Triage(),
 		new TrumpBot(),
 		new UndecidedBot(),
 		new WeaponOfMassDissemination(),
 		new WICKED(),
 		new XenoBot(),
-		new ZombieState() // I(C)
+//		new ZombieState() // I(C)
 	};
 	
 	// Game Parameters
 	private static final int ROUNDS = 50;
-	private static final int GAMES = 10;
+	private static final int GAMES = 100;
 	
 	// Console
 	private static final boolean DEBUG = false;

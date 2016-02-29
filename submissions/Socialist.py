@@ -1,9 +1,8 @@
 from sys import argv 
-
 data=argv[1].split(";")[2].split("_")
-inf=data[2]
-hel=data[1]
-dead=data[3]
+inf=int(data[2])
+hel=int(data[1])
+dead=int(data[3])
 if inf>29:
     print("CQM") # if there is to many sick cure some, quarantine some, and try to get rid of the disease  
 else:
